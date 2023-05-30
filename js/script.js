@@ -34,7 +34,6 @@ class Newsletter {
   }
 
   showError(message) {
-    console.log(`ERROR: ${message}`);
     const formMessage = this.form.querySelector(".form-message");
     formMessage.textContent = message;
     this.form.classList.add("invalid-form");
@@ -63,7 +62,7 @@ class Newsletter {
               <span class="user-email">${email}</span>. Please open
               it and click the button inside to confirm your subscription.
             </p>
-            <button class="btn success-btn" type="button">
+            <button class="btn success-btn" type="button" onClick="window.location.reload()">
               Dismiss message
             </button>
           </div>
@@ -72,8 +71,6 @@ class Newsletter {
       }.bind(this),
       300
     );
-
-    console.log(`SUCCESS! User email is: ${email}`);
   }
 }
 
